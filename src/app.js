@@ -1,5 +1,5 @@
 window.onload = () => {
-    let button = '<button class="btn btn-success display-2 fs-3 fw-bold" id="comienzo">Challenge Skynet</button>';
+    let button = '<button class="btn btn-success display-2 fs-3 fw-bold" id="comienzo">Challenge Sheldon</button>';
     document.getElementById("title").innerHTML = button;
     document.getElementById('comienzo').addEventListener("click", () => {
         document.getElementById("title").innerHTML = '<i class="fa-solid fa-hand-back-fist" id="rock"></i> Rock,<i class="fa-solid fa-paper-plane" id="paper"></i> Paper, <i class="fa-solid fa-scissors" id="scissors"></i> Scissors, <i class="fa-solid fa-hand-lizard" id="lizzard"></i> Lizzard, <i class="fa-solid fa-hand-spock" id="spock"></i> Spock'
@@ -34,13 +34,13 @@ const executeGame = (UserValue) => {
                         score++;
                         document.getElementById('result').innerText = `${UserValue} smashes ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else {
+                        return
+                    }
                         console.log(`your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
                         score--;
                         document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
-                    }
+                    
                     break;
                 case "Paper":
                     if (ConsoleValue === "Rock") {
@@ -48,20 +48,22 @@ const executeGame = (UserValue) => {
                         score++;
                         document.getElementById('result').innerText = `${UserValue} covers ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else if (ConsoleValue === "Spock") {
+                        return
+                    }
+                    if (ConsoleValue === "Spock") {
                         console.log(`You win! ${UserValue} disproves ${ConsoleValue}`);
                         score++;
                         document.getElementById('result').innerText = `${UserValue} disproves ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else {
+                        return
+                    } 
+                    
                         console.log(`your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
                         score--;
                         document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
-
-                    }
+                        
+                    
                     break;
                 case "Scissors":
                     if (ConsoleValue === "Paper") {
@@ -69,20 +71,20 @@ const executeGame = (UserValue) => {
                         score++;
                         document.getElementById('result').innerText = `${UserValue} cuts ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else if (ConsoleValue === "lizzard") {
+                        return
+                    }
+                    if (ConsoleValue === "Lizzard") {
                         console.log(`You win! ${UserValue} decapitate ${ConsoleValue}`);
                         score++;
                         document.getElementById('result').innerText = `${UserValue} decapitate ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else {
+                        return
+                    }
                         console.log(`Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
                         score--;
                         document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
 
-                    }
                     break;
                 case "Lizzard":
                     if (ConsoleValue === "Paper") {
@@ -90,20 +92,21 @@ const executeGame = (UserValue) => {
                         score++;
                         document.getElementById('result').innerText = `${UserValue} eats ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else if (ConsoleValue === "Spock") {
+                        return
+                    }
+                     if (ConsoleValue === "Spock") {
                         console.log(`You win! ${UserValue} poisons ${ConsoleValue}`);
                         score++;
                         document.getElementById('result').innerText = `${UserValue} poisons ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else {
-                        console.log(`Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
-                        score--;
-                        document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
-                        document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
-
+                        return
                     }
+
+                    console.log(`Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
+                    score--;
+                    document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
+                    document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
+
                     break;
                 case "Spock":
                     if (ConsoleValue === "Scissors") {
@@ -111,21 +114,22 @@ const executeGame = (UserValue) => {
                         score++;
                         document.getElementById('result').innerText = `${UserValue} smashes ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else if (ConsoleValue === "Rock") {
+                        return
+                    }
+                    if (ConsoleValue === "Rock") {
                         console.log(`You win! ${UserValue} vaporizes ${ConsoleValue}`);
                         score++;
                         document.getElementById('result').innerText = `${UserValue} vaporizes ${ConsoleValue}`
                         document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F0a3e7b49d308b6f4b7a15f348b78378e%2Ftenor.gif%3Fitemid%3D3556398&f=1&nofb=1&ipt=3ef82c430d27a85e09b0106a9e320b3af69bdebf90c364bdf21a94441385f10c"alt=""width="80%">'
-
-                    } else {
-                        console.log(`Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
-                        score--;
-                        document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
-                        document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
-
+                        return
                     }
+                    console.log(`Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`);
+                    score--;
+                    document.getElementById('result').innerText = `Your ${UserValue} lost to my ${ConsoleValue}! Better luck next time. BAZINGA!`
+                    document.getElementById('photo').innerHTML = '<img id="photo" class="rounded object-fit-cover float-end"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FYTBsKkXWjcKkw%2Fgiphy.gif&f=1&nofb=1&ipt=c02fb3fdf513637a945fcfd9b5db01bda9ce1eb50d0eaa20be9f5dc91b1cd907"alt=""width="80%">'
+
                     break;
+
             }
         }
         document.getElementById('player').innerText = UserValue;
